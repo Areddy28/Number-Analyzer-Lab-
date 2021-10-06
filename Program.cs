@@ -16,9 +16,15 @@ namespace NumberAnalyzerLab2
             while (input)
             {
                 {
+                    Console.WriteLine("Enter your name: ");
+                    string name = (Console.ReadLine()); 
                     Console.WriteLine("Enter an integer between 1 and 100.");
-
                     int num1 = int.Parse(Console.ReadLine());
+
+                    if (num1 < 1 || num1 > 100)
+                    {
+                        Console.WriteLine("This is an invalid input." + $"\n You can only enter a number between 1 and 100 {name} "); 
+                    }
 
                     if (num1 % 2 != 0)
                     {
@@ -48,15 +54,15 @@ namespace NumberAnalyzerLab2
                     Console.WriteLine("Continue? (y/n)");
 
 
-                    string name = Console.ReadLine();
+                    string name1 = Console.ReadLine();
 
-                    if (name == "Y" || name == "y")
+                    if (name1 == "Y" || name1 == "y")
                     {
                         input = true;
                     } else
                     {
                         input = false;
-                        Console.WriteLine("Bye!"); 
+                        Console.WriteLine($"Bye! {name}"); 
                     }
 
                 }
